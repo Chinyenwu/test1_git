@@ -1,0 +1,20 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple File Upload</title>
+  </head>
+  <body>
+
+    {% block content %}
+      <form method="post" enctype="multipart/form-data"><!把表格寫成post的形式>
+        {% csrf_token %}
+        {{ form.as_p }}<!使用forms.py>
+        <button type="submit">Upload</button><!上傳到資料庫>
+      </form>
+      <p><a href="{% url 'home' %}">Return to home</a></p><!超連結到home.html>
+    {% endblock %}
+  </body>
+</html>
